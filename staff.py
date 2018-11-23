@@ -9,6 +9,7 @@ class CompanyHierarchy:
         self.dict = defaultdict(list)
 
     def add(self, line):
+        line = line.replace("\n", "")
         managee, manager = line.split(" ")
         self.dict[managee].append(manager)
 
@@ -30,7 +31,16 @@ def read_file(input_file):
 
     return company
 
+
 if __name__ == "__main__":
     company = read_file(sys.argv[1])
+
     first_employee = sys.argv[2]
     second_employee = sys.argv[3]
+
+    first_employee_managers = company.dict[first_employee]
+    second_employee_managers = company.dict[second_employee]
+
+    common_managers = list(set(first_employee_managers).intersection(second_employee_managers))
+    if len(common_managers)>0:
+        print common_managers[0]
