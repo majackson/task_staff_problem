@@ -19,3 +19,18 @@ def test_script():
     assert output == "Chris\n"
 
 
+def test_create_dict():
+    lines = [
+        "Adam Bob",
+        "Andrea Bob",
+        "Aaron Brenda",
+        "Aisha Brenda",
+        "Brenda Chris",
+        "Bob Chris",
+    ]
+    company = CompanyHierarchy()
+    for line in lines:
+        company.add(line)
+    assert company.length() == 6
+    for name in ["Andrea", "Bob", "Aaron", "Brenda", "Aisha"]:
+        assert name in company.keys()
