@@ -19,7 +19,7 @@ def test_script():
     assert output == "Chris\n"
 
 
-def test_create_dict():
+def test_create_dicts():
     lines = [
         "Adam Bob",
         "Andrea Bob",
