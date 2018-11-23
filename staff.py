@@ -23,12 +23,17 @@ class CompanyHierarchy:
                 self.manager_dict[those_managed].append(manager)
 
 
-    def length(self):
+    def manager_length(self):
         return len(self.manager_dict)
 
-    def keys(self):
+    def manager_keys(self):
         return self.manager_dict.keys()
 
+    def managee_length(self):
+        return len(self.managee_dict)
+
+    def managee_keys(self):
+        return self.managee_dict.keys()
 
 def read_file(input_file):
     """

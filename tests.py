@@ -31,6 +31,9 @@ def test_create_dict():
     company = CompanyHierarchy()
     for line in lines:
         company.add(line)
-    assert company.length() == 6
+    assert company.manager_length() == 6
     for name in ["Andrea", "Bob", "Aaron", "Brenda", "Aisha"]:
-        assert name in company.keys()
+        assert name in company.manager_keys()
+    assert company.managee_length() == 3
+    for name in ["Chris", "Bob", "Brenda"]:
+        assert name in company.managee_keys()
